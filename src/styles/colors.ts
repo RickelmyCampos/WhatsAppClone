@@ -1,0 +1,21 @@
+export const colors = {
+  tealGreen: '#128C7E',
+  tealGreenDark3: '#00A884',
+  tealGreenDark: '#075E54',
+  tealGreenDark2: '#008069',
+  lightGreen: '#25D366',
+  blue: '#34B7F1',
+  white: '#FFFFFF',
+  black: '#000000',
+  black2: '#111b21',
+  grey: '#667781',
+  grey_200: '#3b4a54',
+  //
+  dark1: '#202C33',
+  dark2: '#E9EDEF',
+  dark3: '#8696A0',
+  dark4: '#111b21',
+  dark5: '#0a1014',
+  dark6: '#232D36',
+  dark7: '#101D25',
+};
