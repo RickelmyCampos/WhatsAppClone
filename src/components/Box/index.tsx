@@ -18,12 +18,19 @@ interface BoxProps {
   stroke?: number | undefined;
   borderColor?: ColorValue | undefined;
   bg?: ColorValue | undefined;
-  flex?:  number | undefined;
-  style?:StyleProp<ViewStyle>;
-  justifyContent?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | undefined;
-  alignItems?:FlexAlignType | undefined,
-  direction?: "row" | "column" | "row-reverse" | "column-reverse" | undefined
-  gap?:number | undefined,
+  flex?: number | undefined;
+  style?: StyleProp<ViewStyle>;
+  justifyContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly'
+    | undefined;
+  alignItems?: FlexAlignType | undefined;
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse' | undefined;
+  gap?: number | undefined;
 }
 const Box: React.FC<BoxProps> = ({
   children,
@@ -39,24 +46,27 @@ const Box: React.FC<BoxProps> = ({
   justifyContent,
   alignItems,
   direction,
-  gap
+  gap,
 }) => {
   return (
     <View
-      style={[{
-        justifyContent,
-        flex: flex,
-        padding,
-        width: w,
-        height: h,
-        borderRadius: borderRadius,
-        borderWidth: stroke,
-        borderColor: borderColor,
-        backgroundColor: bg,
-        alignItems,
-        flexDirection:direction,
-        gap
-      },style]}>
+      style={[
+        {
+          justifyContent,
+          flex: flex,
+          padding,
+          width: w,
+          height: h,
+          borderRadius: borderRadius,
+          borderWidth: stroke,
+          borderColor: borderColor,
+          backgroundColor: bg,
+          alignItems,
+          flexDirection: direction,
+          gap,
+        },
+        style,
+      ]}>
       {children}
     </View>
   );
