@@ -1,7 +1,7 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 import {colors} from '@styles/colors';
 
-interface ThemeState {
+export interface ThemeState {
   dark: boolean;
   colors: Colors;
 }
@@ -15,19 +15,19 @@ interface Colors {
 }
 const defaltColors:Colors = {
   primary: colors.lightGreen,
-  background: '',
+  background: colors.dark7,
   notification: '',
   secundary: '',
   text: colors.white,
-  header:colors.dark7
+  header:colors.dark6
 };
 const darkColors:Colors = {
   primary: colors.lightGreen,
-  background: '',
+  background: colors.dark7,
   notification: '',
   secundary: '',
   text: colors.white,
-  header:colors.dark7
+  header:colors.dark6
 };
 const initialState: ThemeState = {
   dark: true,

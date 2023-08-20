@@ -9,6 +9,6 @@ export interface Conversation {
 export interface Message {
   user: string;
   message:string;
-  sendDate:Date;
-  previewDate:Date
+  sendDate:string;
+  previewDate:string
 }

@@ -41,7 +41,7 @@ const ConversationComponent: React.FC<Props> = ({item, navigate}) => {
         </Box>
         <Box>
           <Text style={styles.textMessages}>
-            {item.messages[0].sendDate.toDateString()}
+            {item.messages[0].sendDate}
           </Text>
         </Box>
       </Box>
