@@ -31,6 +31,9 @@ const Routes = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        gestureDirection: 'horizontal',
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+
         headerStyle: {backgroundColor: theme.colors.header},
         headerTintColor: theme.colors.text,
       }}>
@@ -44,9 +47,6 @@ const Routes = () => {
         component={Chat}
         options={({route, navigation}: ChatScreenRouteProp) => ({
           title: route.params.name,
-
-          gestureDirection: 'horizontal',
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 
           header: () => (
             <ChatHeader

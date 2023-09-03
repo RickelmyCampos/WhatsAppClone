@@ -14,6 +14,7 @@ module.exports = {
           '@interfaces': './src/interfaces',
           '@routes': './src/routes',
           '@types': './src/types',
+          '@utils': './src/utils',
         },
       },
     ],

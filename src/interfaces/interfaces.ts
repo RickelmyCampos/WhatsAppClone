@@ -10,5 +10,6 @@ export interface Message {
   user: string;
   message:string;
   sendDate:string;
-  previewDate:string
+  previewDate:string|null
+  receivableDate:string|null
 }

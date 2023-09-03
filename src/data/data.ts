@@ -7,14 +7,16 @@ export const listData: Conversation[] = [
         {
           message: 'Qua Qua asdiuhuhauisdhuh uashduashd auhsdiuashd haisdshdiaus dhasduiasdh asdiausdhaushdiaushdaisud hsdiasdhs iduhasudha sii',
           user: 'Pato',
-          sendDate: new Date().toDateString(),
-          previewDate: new Date().toDateString(),
+          sendDate: new Date().toISOString(),
+          previewDate: new Date().toISOString(),
+          receivableDate:new Date().toISOString()
         },
         {
           message: 'qta ataesgygeueh',
           user: 'User',
-          sendDate: new Date().toDateString(),
-          previewDate: new Date().toDateString(),
+          sendDate: new Date().toISOString(),
+          previewDate: new Date().toISOString(),
+          receivableDate:new Date().toISOString()
         },
       ],
       number: '6765512392938',
@@ -29,8 +31,9 @@ export const listData: Conversation[] = [
         {
           message: 'Auauau',
           user: 'Cachorro',
-          sendDate: new Date().toDateString(),
-          previewDate: new Date().toDateString(),
+          sendDate: new Date().toISOString(),
+          previewDate: new Date().toISOString(),
+          receivableDate:new Date().toISOString()
         },
       ],
       number: '6765512392938',

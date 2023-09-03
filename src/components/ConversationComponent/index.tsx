@@ -1,28 +1,38 @@
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {Pressable, StyleSheet, Text, Dimensions} from 'react-native';
 import React, {useState} from 'react';
 import Box from '../Box';
 import {Avatar} from '@rneui/themed';
 import {Conversation} from 'src/interfaces/interfaces';
 import {colors} from '@styles/colors';
+import {fonts} from '@styles/fonts';
+import {dateFormated, getConversationDateOrHour} from '@utils/date';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props {
   item: Conversation;
   navigate: () => {} | void;
 }
+const getIconMessageStatus = () => {
+  const icon: 'check' | 'check-all' = 'check';
+  return <MaterialCommunityIcon name={icon} />;
+};
+const windowWidth = Dimensions.get('window').width;
 const ConversationComponent: React.FC<Props> = ({item, navigate}) => {
   const [alterBgImage, setAlterBgImage] = useState(false);
   return (
     <Pressable
-    android_ripple={{color:'rgba(255, 255, 255,0.5)'}}
-      onPress={navigate}
-      >
+      style={{width: windowWidth}}
+      android_ripple={{color: 'rgba(255, 255, 255,0.5)'}}
+      onPress={navigate}>
       <Box
+        w={windowWidth}
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        padding={5}>
-        <Box direction="row" gap={8} alignItems="center">
+        h={80}>
+        <Box flex={1} direction="row" alignItems="center" padding={12}>
           <Avatar
+            size={50}
             avatarStyle={{
               backgroundColor: alterBgImage
                 ? 'rgba(255,255,255,0.5)'
@@ -34,15 +44,28 @@ const ConversationComponent: React.FC<Props> = ({item, navigate}) => {
             source={{uri: item.profilePicture}}
             rounded
           />
-          <Box>
-            <Text style={styles.textNames}>{item.name}</Text>
-            <Text style={styles.textMessages}>{item.messages[0].message}</Text>
+          <Box flex={1} padding={10}>
+            <Box
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center">
+              <Text style={[fonts.fontNormal, styles.textNames]}>
+                {item.name}
+              </Text>
+              <Text style={[fonts.fontTiny, styles.textMessages]}>
+                {getConversationDateOrHour(new Date(item.messages[0].sendDate))}
+              </Text>
+            </Box>
+            <Box direction="row" alignItems="center" gap={4}>
+              {getIconMessageStatus()}
+              <Text
+                numberOfLines={1}
+                lineBreakMode="tail"
+                style={[fonts.fontTiny, styles.textMessages]}>
+                {item.messages[0].message}
+              </Text>
+            </Box>
           </Box>
-        </Box>
-        <Box>
-          <Text style={styles.textMessages}>
-            {item.messages[0].sendDate}
-          </Text>
         </Box>
       </Box>
     </Pressable>
@@ -54,12 +77,8 @@ export default ConversationComponent;
 const styles = StyleSheet.create({
   textNames: {
     color: colors.white,
-    fontWeight: 'normal',
-    fontSize: 16,
   },
   textMessages: {
     color: colors.grey,
-    fontWeight: 'normal',
-    fontSize: 12,
   },
 });

@@ -5,6 +5,7 @@ interface Fonts {
   fontLarge: StyleProp<TextStyle>;
   fontHeader: StyleProp<TextStyle>;
   fontSmall: StyleProp<TextStyle>;
+  fontTiny: StyleProp<TextStyle>;
 }
 export const fonts: Fonts = {
   fontLarge: {
@@ -15,6 +16,9 @@ export const fonts: Fonts = {
   },
   fontSmall: {
     fontSize: 16,
+  },
+  fontTiny: {
+    fontSize: 12,
   },
   fontHeader: {
     fontSize: 24,
