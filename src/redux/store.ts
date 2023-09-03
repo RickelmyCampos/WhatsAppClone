@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import themeSlice from './features/themeSlice'
+import modalProfileSlice from './features/modalProfileSlice'
 // ...
 
 export const store = configureStore({
   reducer: {
     theme: themeSlice,
+    modalProfile:modalProfileSlice
   }
 })
 

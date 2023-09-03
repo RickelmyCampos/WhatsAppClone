@@ -28,7 +28,7 @@ const config: TransitionSpec = {
 const Stack = createStackNavigator<RootStackParamList>();
 const Routes = () => {
   const theme = useAppSelector(state => state.theme);
-  return (
+  return (  
     <Stack.Navigator
       screenOptions={{
         gestureDirection: 'horizontal',

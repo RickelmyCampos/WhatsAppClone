@@ -9,7 +9,7 @@
       "@redux/*": ["./src/redux/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@screens/*": ["./src/screens/*"],
-      "@interfaces": ["./src/interfaces"],
+      "@interfaces/*": ["./src/interfaces/*"],
       "@routes": ["./src/routes"],
       "@types": ["./src/types"],
       "@utils/*": ["./src/utils/*"],

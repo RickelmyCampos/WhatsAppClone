@@ -11,13 +11,14 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 interface Props {
   item: Conversation;
   navigate: () => {} | void;
+  openModal:()=>{}|void
 }
 const getIconMessageStatus = () => {
   const icon: 'check' | 'check-all' = 'check';
   return <MaterialCommunityIcon name={icon} />;
 };
 const windowWidth = Dimensions.get('window').width;
-const ConversationComponent: React.FC<Props> = ({item, navigate}) => {
+const ConversationComponent: React.FC<Props> = ({item, navigate,openModal}) => {
   const [alterBgImage, setAlterBgImage] = useState(false);
   return (
     <Pressable
@@ -38,7 +39,7 @@ const ConversationComponent: React.FC<Props> = ({item, navigate}) => {
                 ? 'rgba(255,255,255,0.5)'
                 : undefined,
             }}
-            onPress={() => {}}
+            onPress={openModal}
             onPressIn={() => setAlterBgImage(true)}
             onPressOut={() => setAlterBgImage(false)}
             source={{uri: item.profilePicture}}
