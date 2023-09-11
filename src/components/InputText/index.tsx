@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   View,
+  KeyboardAvoidingView
 } from 'react-native';
 import React, {useState} from 'react';
 import MaterialCommunitIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -23,6 +24,7 @@ const InputText: React.FC<InputTextProps> = ({send}) => {
   const [text, setText] = useState('');
   const textIsEmpy = text.length == 0;
   return (
+    <KeyboardAvoidingView>
     <Box
       direction="row"
       padding={6}
@@ -74,7 +76,7 @@ const InputText: React.FC<InputTextProps> = ({send}) => {
         <Pressable
           onPress={() => {
             setText('');
-            send({message: text, previewDate: '', sendDate: '', user: 'User'});
+            send({message: text, previewDate: new Date().toISOString(), sendDate: new Date().toISOString(), user: 'User' ,receivableDate:new Date().toISOString()});
           }}>
           <MaterialCommunitIcon
             name={textIsEmpy ? 'microphone' : 'send'}
@@ -84,6 +86,7 @@ const InputText: React.FC<InputTextProps> = ({send}) => {
         </Pressable>
       </Box>
     </Box>
+    </KeyboardAvoidingView>
   );
 };
 

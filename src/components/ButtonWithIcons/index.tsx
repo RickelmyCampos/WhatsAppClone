@@ -12,7 +12,10 @@ interface ButtonWithIconsProps {
     | 'emoticon'
     | 'paperclip'
     | 'bitcoin'
-    | 'camera';
+    | 'camera'
+    | 'information-outline'
+    | 'android-messages'
+    | 'message';
   color: string;
   onPress?: () => {} | void;
 }

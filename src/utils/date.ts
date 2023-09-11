@@ -32,3 +32,11 @@ export const getConversationDateOrHour=(date:Date)=>{
     
    return dateFormat
 }
+export const getDateOrToday=(date:Date)=>{
+    const dateFormat=dateFormated(date)
+    if(dateFormated(today)===dateFormat){
+        return "Hoje"
+    }
+    
+   return dateFormat
+}
