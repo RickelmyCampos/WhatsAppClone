@@ -10,7 +10,7 @@ interface MessageProps {
   chatUserName: string;
 }
 const MessageComponent = ({item, chatUserName}: MessageProps) => {
-  console.log(chatUserName == item.user);
+  //console.log(chatUserName == item.user);
   const isChatUserName = chatUserName === item.user;
   return (
     <Box alignItems={isChatUserName ? 'flex-start' : 'flex-end'} padding={10}>
