@@ -33,4 +33,5 @@ yarn
 ```
 yarn android
 ```
-
+-[ ] Interface Home
+-[ ] Interface Chat
