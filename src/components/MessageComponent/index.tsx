@@ -18,8 +18,10 @@ const MessageComponent = ({item, chatUserName}: MessageProps) => {
         padding={8}
         borderRadius={10}
         bg={isChatUserName ? colors.dark6 : colors.tealGreenDark}
+        direction="row"
         style={{
           maxWidth: '80%',
+          flexWrap: 'wrap',
         }}>
         <Text style={[fonts.fontNormal, {color: colors.white}]}>
           {item.message}
@@ -27,7 +29,20 @@ const MessageComponent = ({item, chatUserName}: MessageProps) => {
         <Text
           style={[
             fonts.fontNormal,
-            { fontSize: 12, textAlign: 'right'},
+            {
+              position: 'absolute',
+              right: 8,
+              bottom: 8,
+              fontSize: 12,
+              textAlign: 'right',
+            },
+          ]}>
+          {hourFormated(new Date(item.sendDate))}
+        </Text>
+        <Text
+          style={[
+            fonts.fontNormal,
+            {fontSize: 12, height: 0, textAlign: 'right',marginLeft:5},
           ]}>
           {hourFormated(new Date(item.sendDate))}
         </Text>

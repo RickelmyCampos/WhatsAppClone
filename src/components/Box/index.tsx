@@ -31,6 +31,7 @@ interface BoxProps {
   alignItems?: FlexAlignType | undefined;
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse' | undefined;
   gap?: number | undefined;
+  refBox?: React.LegacyRef<View> | undefined;
 }
 const Box: React.FC<BoxProps> = ({
   children,
@@ -47,9 +48,11 @@ const Box: React.FC<BoxProps> = ({
   alignItems,
   direction,
   gap,
+  refBox
 }) => {
   return (
     <View
+    ref={refBox}
       style={[
         {
           justifyContent,

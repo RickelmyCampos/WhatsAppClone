@@ -7,4 +7,5 @@ import ChatHeader from "@components/ChatHeader"
 import ButtonWithIcons from "@components/ButtonWithIcons";
 import ModalComponent from "@components/ModalComponent";
 import ModalProfile from "@components/ModalProfile";
-export {Box,ConversationComponent,InputText,MessageComponent,Icons,ChatHeader,ButtonWithIcons,ModalComponent,ModalProfile}
+import SectionListComponent from "@components/SectionListComponent";
+export {Box,ConversationComponent,InputText,MessageComponent,Icons,ChatHeader,ButtonWithIcons,ModalComponent,ModalProfile,SectionListComponent}
